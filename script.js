@@ -7,13 +7,13 @@ form.addEventListener("submit", function (event) {
   const nameInput = document.getElementById("name").value.trim();
   const ageInput = document.getElementById("age").value.trim();
 
-  // ✅ Validation: check for empty inputs
+
   if (!nameInput || !ageInput) {
     alert("Please enter valid details.");
     return;
   }
 
-  // ✅ Create a promise with 4-second delay
+
   const votingPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (Number(ageInput) > 18) {
@@ -24,7 +24,7 @@ form.addEventListener("submit", function (event) {
     }, 4000);
   });
 
-  // ✅ Handle the promise resolution or rejection
+ 
   votingPromise
     .then((message) => alert(message))
     .catch((error) => alert(error));
